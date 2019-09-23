@@ -24,24 +24,49 @@ export default class App extends React.Component {
       { id: 4, user: 'Luara' }
     ];
     return (
-      <FlatList style={{ marginTop: 20 }}
+      <FlatList style={styles.container}
         keyExtractor={item => String(item.id)}
         data={photo}
         renderItem={({ item }) =>
 
           <View>
-            <View style={{ margin: 10, flexDirection: 'row', alignItems: 'baseline' }}>
+            <View style={styles.header}>
               <Image source={require('./resources/images/perfil.jpg')}
-                style={{ width: 40, height: 40, borderRadius: 20 }}></Image>
+                style={styles.perfil.perfil_foto}></Image>
 
               <Text>{item.user}</Text>
             </View>
 
             <Image source={require('./resources/images/javascript.png')}
-              style={{ marginRight: 10, width: width, height: width }}></Image>
+              style={styles.perfil.post}></Image>
           </View>
         }
       />
     );
   }
 }
+
+
+const styles = StyleSheet.create({
+  container: {
+    marginTop: 20
+  },
+  header: {
+    margin: 10,
+    flexDirection: 'row',
+    alignItems: 'baseline'
+  },
+
+  perfil:{
+    perfil_foto:{
+      width: 40,
+      height: 40,
+      borderRadius: 20 
+    },
+    post:{
+      marginRight: 10,
+      width: width,
+      height: width 
+    }
+  }
+});
