@@ -28,29 +28,29 @@ export default class App extends React.Component {
         keyExtractor={item => String(item.id)}
         data={photo}
         renderItem={ ({item}) =>
+
           <View>
             <View style={styles.header}>
               <Image source={require('./resources/images/perfil.jpg')}
-                style={styles.perfil.perfil_foto}></Image>
+                style={styles.perfil_foto}></Image>
 
               <Text>{item.user}</Text>
             </View>
 
             <Image source={require('./resources/images/javascript.png')}
-              style={styles.perfil.post}></Image>
+              style={styles.post}></Image>
           </View>
         }
       />
     );
-  };
+  }
 }
 
-
 const styles = StyleSheet.create({
-  container: {
-    marginTop: 20
+  container:{
+    marginTop:20
   },
-  header: {
+  header:{
     margin: 10,
     flexDirection: 'row',
     alignItems: 'baseline'
@@ -63,6 +63,6 @@ const styles = StyleSheet.create({
   post:{
     marginRight: 10,
     width: width,
-    height: width 
+    height: width
   }
 });
