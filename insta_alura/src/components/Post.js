@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{Component} from 'react';
 
 import {
   StyleSheet,
@@ -6,15 +6,13 @@ import {
   View,
   Image,
   Dimensions,
-  ScrollView,
-  FlatList
 } from 'react-native';
 
 
 const width = Dimensions.get('screen').width;
 const height = Dimensions.get('screen').height;
 
-export default class Post extends React.Component {
+export default class Post extends Component {
   render() {
     return (
         <View>
@@ -22,9 +20,8 @@ export default class Post extends React.Component {
             <Image source={require('../../resources/images/perfil.jpg')}
             style={styles.perfil_foto}></Image>
 
-            <Text>{item.user}</Text>
+            <Text>{this.props.foto.user}</Text>
         </View>
-
         <Image source={require('../../resources/images/javascript.png')}
             style={styles.post}></Image>
         </View>

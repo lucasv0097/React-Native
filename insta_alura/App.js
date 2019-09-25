@@ -11,7 +11,6 @@ import {
 } from 'react-native';
 import Post from './src/components/Post';
 
-
 const width = Dimensions.get('screen').width;
 const height = Dimensions.get('screen').height;
 
@@ -29,7 +28,8 @@ export default class App extends React.Component {
         keyExtractor={item => String(item.id)}
         data={photo}
         renderItem={ ({item}) =>
-          <Post/>
+
+<Post foto={item}/>
         }
       />
     );
