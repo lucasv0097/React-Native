@@ -1,46 +1,43 @@
-import React,{Component} from 'react';
+import React, { Component } from "react";
 
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  Dimensions,
-} from 'react-native';
+import { StyleSheet, Text, View, Image, Dimensions } from "react-native";
 
-
-const width = Dimensions.get('screen').width;
-const height = Dimensions.get('screen').height;
+const width = Dimensions.get("screen").width;
+const height = Dimensions.get("screen").height;
 
 export default class Post extends Component {
   render() {
     return (
-        <View>
+      <View>
         <View style={styles.header}>
-            <Image source={require('../../resources/images/perfil.jpg')}
-            style={styles.perfil_foto}></Image>
+          <Image
+            source={{ uri: this.props.foto.urlPerfil }}
+            style={styles.perfil_foto}
+          ></Image>
 
-            <Text>{this.props.foto.user}</Text>
+          <Text>{this.props.foto.loginUsuario}</Text>
         </View>
-        <Image source={require('../../resources/images/javascript.png')}
-            style={styles.post}></Image>
-        </View>
+        <Image
+          source={{ uri: this.props.foto.urlFoto }}
+          style={styles.post}
+        ></Image>
+      </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  header:{
+  header: {
     margin: 10,
-    flexDirection: 'row',
-    alignItems: 'baseline'
+    flexDirection: "row",
+    alignItems: "baseline"
   },
-  perfil_foto:{
+  perfil_foto: {
     width: 40,
     height: 40,
-    borderRadius: 20 
+    borderRadius: 20
   },
-  post:{
+  post: {
     marginRight: 10,
     width: width,
     height: width
