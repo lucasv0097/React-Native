@@ -9,6 +9,7 @@ import {
   ScrollView,
   FlatList
 } from 'react-native';
+import Post from './src/components/Post';
 
 
 const width = Dimensions.get('screen').width;
@@ -28,18 +29,7 @@ export default class App extends React.Component {
         keyExtractor={item => String(item.id)}
         data={photo}
         renderItem={ ({item}) =>
-
-          <View>
-            <View style={styles.header}>
-              <Image source={require('./resources/images/perfil.jpg')}
-                style={styles.perfil_foto}></Image>
-
-              <Text>{item.user}</Text>
-            </View>
-
-            <Image source={require('./resources/images/javascript.png')}
-              style={styles.post}></Image>
-          </View>
+          <Post/>
         }
       />
     );
