@@ -27,8 +27,7 @@ export default class App extends React.Component {
       <FlatList style={styles.container}
         keyExtractor={item => String(item.id)}
         data={photo}
-        renderItem={({ item }) =>
-
+        renderItem={ ({item}) =>
           <View>
             <View style={styles.header}>
               <Image source={require('./resources/images/perfil.jpg')}
@@ -43,7 +42,7 @@ export default class App extends React.Component {
         }
       />
     );
-  }
+  };
 }
 
 
@@ -56,17 +55,14 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'baseline'
   },
-
-  perfil:{
-    perfil_foto:{
-      width: 40,
-      height: 40,
-      borderRadius: 20 
-    },
-    post:{
-      marginRight: 10,
-      width: width,
-      height: width 
-    }
+  perfil_foto:{
+    width: 40,
+    height: 40,
+    borderRadius: 20 
+  },
+  post:{
+    marginRight: 10,
+    width: width,
+    height: width 
   }
 });
