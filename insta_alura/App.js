@@ -18,7 +18,7 @@ export default class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      photo: [
+      foto: [
         { id: 1, user: "Lucas" },
         { id: 2, user: "Daniela" },
         { id: 3, user: "Paulo" },
@@ -30,7 +30,7 @@ export default class App extends React.Component {
   componentDidMount() {
     fetch("https://instalura-api.herokuapp.com/api/public/fotos/rafael")
       .then(resposta => resposta.json())
-      .then(json => this.setState({ photo: json }));
+      .then(json => this.setState({ foto: json }));
   }
 
   render() {
@@ -38,7 +38,7 @@ export default class App extends React.Component {
       <FlatList
         style={styles.container}
         keyExtractor={item => String(item.id)}
-        data={this.state.photo}
+        data={this.state.foto}
         renderItem={({ item }) => <Post foto={item} />}
       />
     );

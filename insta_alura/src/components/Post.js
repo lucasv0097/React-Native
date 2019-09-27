@@ -18,7 +18,7 @@ export default class Post extends Component {
     this.state = {
       foto: this.props.foto
     };
-  }
+ }
   
   carregaIcone(likeada){
     return likeada ? require('../../resources/images/s2-checked.png') : require('../../resources/images/s2.png')
@@ -39,7 +39,7 @@ export default class Post extends Component {
       <View>
         <View style={styles.header}>
           <Image
-            source={{ uri: foto.urlPerfil }}
+            source={{ uri: this.state.foto.urlPerfil }}
             style={styles.perfil_foto}>
           </Image>
           <Text>{foto.loginUsuario}</Text>   
