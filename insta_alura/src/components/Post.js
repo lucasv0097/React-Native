@@ -40,21 +40,18 @@ export default class Post extends Component {
         <View style={styles.header}>
           <Image
             source={{uri: this.props.foto.urlPerfil }}
-            style={styles.perfil_foto}>
-          </Image>
+            style={styles.perfil_foto} />
           <Text>{this.state.foto.loginUsuario}</Text>   
         </View>
 
         <Image
           source={{ uri: foto.urlFoto }}
-          style={styles.post}>          
-        </Image>
+          style={styles.post} />
 
         <View style={styles.rodape}>
           <TouchableOpacity onPress={this.like.bind(this)}>
             <Image style={styles.botaoDeLike}
-              source={this.carregaIcone(foto.likeada)}>
-            </Image>
+              source={this.carregaIcone(foto.likeada)} />
           </TouchableOpacity>
         </View>
       </View>
