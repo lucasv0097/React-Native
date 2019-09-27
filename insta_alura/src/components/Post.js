@@ -39,10 +39,10 @@ export default class Post extends Component {
       <View>
         <View style={styles.header}>
           <Image
-            source={{ uri: this.state.foto.urlPerfil }}
+            source={{uri: this.props.foto.urlPerfil }}
             style={styles.perfil_foto}>
           </Image>
-          <Text>{foto.loginUsuario}</Text>   
+          <Text>{this.state.foto.loginUsuario}</Text>   
         </View>
 
         <Image
