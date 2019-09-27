@@ -1,26 +1,62 @@
 import React, { Component } from "react";
 
-import { StyleSheet, Text, View, Image, Dimensions } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  Dimensions,
+  TouchableOpacity
+} from "react-native";
 
 const width = Dimensions.get("screen").width;
 const height = Dimensions.get("screen").height;
 
 export default class Post extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      foto: this.props.foto
+    };
+  }
+  
+  carregaIcone(likeada){
+    return likeada ? require('../../resources/images/s2-checked.png') : require('../../resources/images/s2.png')
+  }
+
+  like(){
+    const fotoAtualizada ={
+      ...this.state.foto,
+      likeada: !this.state.foto.likeada
+    }
+    this.setState({foto: fotoAtualizada});
+  }
+
   render() {
+    const {foto}= this.state;
+
     return (
       <View>
         <View style={styles.header}>
           <Image
             source={{ uri: this.props.foto.urlPerfil }}
-            style={styles.perfil_foto}
-          ></Image>
-
-          <Text>{this.props.foto.loginUsuario}</Text>
+            style={styles.perfil_foto}>
+          </Image>
+          <Text>{this.props.foto.loginUsuario}</Text>   
         </View>
+
         <Image
           source={{ uri: this.props.foto.urlFoto }}
-          style={styles.post}
-        ></Image>
+          style={styles.post}>          
+        </Image>
+
+        <View style={styles.rodape}>
+          <TouchableOpacity onPress={this.like.bind(this)}>
+            <Image style={styles.botaoDeLike}
+              source={this.carregaIcone(foto.likeada)}>
+            </Image>
+          </TouchableOpacity>
+        </View>
       </View>
     );
   }
@@ -41,5 +77,12 @@ const styles = StyleSheet.create({
     marginRight: 10,
     width: width,
     height: width
+  },
+  botaoDeLike: {
+    height: 40,
+    width: 40 
+  },
+  rodape:{
+    margin:10
   }
 });
