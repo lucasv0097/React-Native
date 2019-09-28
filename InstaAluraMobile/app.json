@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "insta_alura",
-    "slug": "insta_alura",
+    "name": "InstaAluraMobile",
+    "slug": "InstaAluraMobile",
     "privacy": "public",
     "sdkVersion": "35.0.0",
     "platforms": [
